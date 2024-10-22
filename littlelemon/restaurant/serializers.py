@@ -1,7 +1,12 @@
 from .models import MenuItem, Booking
+from django.contrib.auth.models import User
 from rest_framework import serializers
 
-# from django.contrib.auth.models import User
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = "__all__"
 
 
 class MenuSerializer(serializers.ModelSerializer):
@@ -9,12 +14,6 @@ class MenuSerializer(serializers.ModelSerializer):
         model = MenuItem
         # fields = ["url", "title_menu", "price", "inventory"]
         fields = "__all__"
-
-
-# class UserSerializer(serializers.HyperlinkedModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ["url", "username", "email", "groups"]
 
 
 class BookingSerializer(serializers.ModelSerializer):
