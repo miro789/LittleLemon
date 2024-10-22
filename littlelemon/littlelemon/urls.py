@@ -19,12 +19,17 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from restaurant import views
+from restaurant.views import UserViewSet
 
 router = routers.DefaultRouter()
 router.register(r"tables", views.BookingViewSet)
+router.register(r"users", UserViewSet)  # Register the UserViewSet
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("restaurant/", include("restaurant.urls")),
     path("restaurant/booking/", include(router.urls)),
+    path("auth/", include("djoser.urls")),
+    path("auth/", include("djoser.urls.authtoken")),
+    path("auth/users/", include(router.urls)),
 ]

@@ -11,8 +11,10 @@ class MenuItem(models.Model):
     class Meta:
         ordering = ["title_menu"]
 
-    def __str__(self):
-        return str(self.title_menu)
+    # def __str__(self):
+    #     return str(self.title_menu)
+    def get_item(self):
+        return f"{self.title_menu} : {str(self.price)}"  # Output: "Pizza : 9.99"
 
 
 class Booking(models.Model):
