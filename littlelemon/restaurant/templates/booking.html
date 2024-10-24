@@ -1,0 +1,68 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block title %}Customer Booking
+{%endblock %} 
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/booking_style.css' %}" />
+<div class="container">
+  <div class="booking-bg">
+    <div class="overlay"></div>
+    <div class="booking-form-container">
+      <h1>Booking Tables Now</h1>
+      <form id="booking-form" class="booking-form">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <br />
+        <label for="no_of_guests">Number of Guests:</label>
+        <input type="number" id="no_of_guests" name="no_of_guests" required />
+        <br />
+        <label for="bookingDate">Booking Date:</label>
+        <input
+          type="datetime-local"
+          id="bookingDate"
+          name="bookingDate"
+          required
+        />
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  document
+    .getElementById('booking-form')
+    .addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent default form submission
+      const formData = {
+        name: document.getElementById('name').value,
+        no_of_guests: document.getElementById('no_of_guests').value,
+        bookingDate: document.getElementById('bookingDate').value,
+      };
+
+      fetch('http://127.0.0.1:8000/api/tables/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: 'Token 7187423fe1317a7be6337326d5efcf52ba560676', // Include your actual token here
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Handle successful response
+          alert('Booking successful!');
+          console.log('Success:', data);
+        })
+        .catch((error) => {
+          // Handle errors here
+          alert('Booking failed!');
+          console.error('Error:', error);
+        });
+    });
+</script>
+{% endblock %}
