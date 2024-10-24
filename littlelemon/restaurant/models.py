@@ -7,6 +7,7 @@ class MenuItem(models.Model):
     title_menu = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     inventory = models.SmallIntegerField()
+    image_name = models.CharField(max_length=100, blank=True) # Use image_name
 
     class Meta:
         ordering = ["title_menu"]

@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Menu List{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/menu_style.css' %}">
+<div class="container">
+    <h1 style="text-align: center;">Menu List</h1>
+    <div class="menu" id="menu-list">
+        <!-- Data will be populated here by JavaScript -->
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('http://127.0.0.1:8000/api/menu/')
+            .then(response => response.json())
+            .then(data => {
+                const menuList = document.getElementById('menu-list');
+                menuList.innerHTML = '';  // Clear existing content
+                data.forEach(item => {
+                    const menuItem = document.createElement('div');
+                    menuItem.className = 'menu-item';
+                    const imgUrl = `{% static 'restaurant/img/' %}` + item.image_name;  // Construct the image URL
+                    menuItem.innerHTML = `
+                        <img src="${imgUrl}" alt="${item.title_menu}">
+                        <h2>${item.title_menu}</h2>
+                        <p>Description of ${item.title_menu}</p>
+                        <p class="price">$${item.price}</p>
+                    `;
+                    menuList.appendChild(menuItem);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    });
+</script>
+{% endblock %}
