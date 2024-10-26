@@ -15,7 +15,9 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        fetch('http://127.0.0.1:8000/api/menu/')
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const apiURL = isLocal ? 'http://127.0.0.1:8000/api/menu/' : 'http://3.106.122.33:8000/api/menu/';
+        fetch(apiURL)
             .then(response => response.json())
             .then(data => {
                 const menuList = document.getElementById('menu-list');
