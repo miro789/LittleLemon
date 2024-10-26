@@ -46,12 +46,13 @@
 
       const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
       const apiURL = isLocal ? 'http://127.0.0.1:8000/api/booking/tables/' : 'http://3.106.122.33:8000/api/booking/tables/';
+      const token = localStorage.getItem('authToken'); // Get the token from localStorage
 
       fetch(apiURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: 'Token 7187423fe1317a7be6337326d5efcf52ba560676', // Include your actual token here
+          'Authorization': `Token ${token}`, // Use the dynamic token
         },
         body: JSON.stringify(formData),
       })
