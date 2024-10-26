@@ -34,46 +34,54 @@
 </div>
 
 <script>
- document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('booking-form');
-    
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('booking-form');
         
-        const formData = {
-            name: document.getElementById('name').value,
-            no_of_guests: document.getElementById('no_of_guests').value,
-            bookingDate: document.getElementById('bookingDate').value,
-        };
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                no_of_guests: document.getElementById('no_of_guests').value,
+                bookingDate: document.getElementById('bookingDate').value,
+            };
 
-        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-        const apiURL = isLocal ? 'http://127.0.0.1:8000/api/booking/tables/' : 'http://3.106.122.33:8000/api/booking/tables/';
-        const token = localStorage.getItem('authToken'); // Get the token from localStorage
-
-        fetch(apiURL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Token ${token}`, // Use the dynamic token
-            },
-            body: JSON.stringify(formData),
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
+            // Get the token from localStorage
+            const token = localStorage.getItem('authToken');
+            
+            // Check if token is defined
+            if (!token) {
+                alert('Token not found. Please log in first.');
+                return;
             }
-            return response.json();
-        })
-        .then(data => {
-            alert('Booking successful!');
-            console.log('Success:', data);
-        })
-        .catch(error => {
-            alert('Booking failed!');
-            console.error('Error:', error);
+
+            const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            const apiURL = isLocal ? 'http://127.0.0.1:8000/api/booking/tables/' : 'http://3.106.122.33:8000/api/booking/tables/';
+
+            fetch(apiURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Token ${token}`, // Use the dynamic token
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert('Booking successful!');
+                console.log('Success:', data);
+            })
+            .catch(error => {
+                alert('Booking failed: ' + error.message);
+                console.error('Error:', error);
+            });
         });
     });
-});
-
 </script>
+
 {% endblock %}
