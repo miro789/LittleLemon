@@ -61,6 +61,8 @@
             .then(data => {
                 alert('Booking successful!');
                 console.log('Success:', data);
+                // Clear the form fields
+                form.reset();
             })
             .catch(error => {
                 alert('Booking failed: ' + error.message);
@@ -69,5 +71,6 @@
         });
     });
 </script>
+
 {% endblock %}
 
