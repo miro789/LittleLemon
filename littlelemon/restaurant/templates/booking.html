@@ -34,39 +34,46 @@
 </div>
 
 <script>
-  document
-    .getElementById('booking-form')
-    .addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent default form submission
-      const formData = {
-        name: document.getElementById('name').value,
-        no_of_guests: document.getElementById('no_of_guests').value,
-        bookingDate: document.getElementById('bookingDate').value,
-      };
+ document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('booking-form');
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        const formData = {
+            name: document.getElementById('name').value,
+            no_of_guests: document.getElementById('no_of_guests').value,
+            bookingDate: document.getElementById('bookingDate').value,
+        };
 
-      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      const apiURL = isLocal ? 'http://127.0.0.1:8000/api/booking/tables/' : 'http://3.106.122.33:8000/api/booking/tables/';
-      const token = localStorage.getItem('authToken'); // Get the token from localStorage
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const apiURL = isLocal ? 'http://127.0.0.1:8000/api/booking/tables/' : 'http://3.106.122.33:8000/api/booking/tables/';
+        const token = localStorage.getItem('authToken'); // Get the token from localStorage
 
-      fetch(apiURL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Token ${token}`, // Use the dynamic token
-        },
-        body: JSON.stringify(formData),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          // Handle successful response
-          alert('Booking successful!');
-          console.log('Success:', data);
+        fetch(apiURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Token ${token}`, // Use the dynamic token
+            },
+            body: JSON.stringify(formData),
         })
-        .catch((error) => {
-          // Handle errors here
-          alert('Booking failed!');
-          console.error('Error:', error);
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert('Booking successful!');
+            console.log('Success:', data);
+        })
+        .catch(error => {
+            alert('Booking failed!');
+            console.error('Error:', error);
         });
     });
+});
+
 </script>
 {% endblock %}
