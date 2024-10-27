@@ -3,7 +3,7 @@
 ## Overview
 This project is designed to provide a hands-on experience in creating a Backend Framework and APIs using Django. It helps in understanding the working of the Django Framework, creating APIs, and connecting databases from backend or API to HTML. Additionally, it covers the deployment of the project on AWS to ensure it runs continuously 24/7.
 
-![Project Screenshot](https://prnt.sc/13Y58j8lvI9j)
+![Project Screenshot](https://github.com/miro789/LittleLemon/blob/main/littlelemon/restaurant/static/restaurant/img/poster.png)
 
 ## Features
 - **User Authentication**:
