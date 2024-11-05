@@ -29,8 +29,8 @@ router.register(r"users", UserViewSet)  # Register the UserViewSet
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("restaurant/", include("restaurant.urls")),  # Non-API routes
-    path("api/booking/", include(router.urls)),
-    path("api/menu/", include("restaurant.api_urls")), # API routes
+    path("api/booking/v1", include(router.urls)),
+    path("api/menu/v1", include("restaurant.api_urls")), # API routes
     path("auth/", include("djoser.urls")),
     path("auth/", include("djoser.urls.authtoken")),
 ]
