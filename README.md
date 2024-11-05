@@ -21,8 +21,8 @@ This project is designed to provide a hands-on experience in creating a Backend 
 
 - **APIs**:
   - **Django REST Framework**:
-    - Booking API: [Booking API](http://3.106.122.33:8888/api/booking/tables/)
-    - Menu API: [Menu API](http://3.106.122.33:8888/api/menu/)
+    - Booking API: [Booking API](http://3.106.122.33:8888/api/v1/booking/tables/)
+    - Menu API: [Menu API](http://3.106.122.33:8888/api/v1/menu/)
 
 ## Tools and Technologies
 - **Django Framework**: For building the backend and APIs.
