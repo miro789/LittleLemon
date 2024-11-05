@@ -25,13 +25,13 @@ SECRET_KEY = "django-insecure-sv+9j)!6=71c_#por24)2)2gc%i5lpwfd)4me4+qgez8l&5-2v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.106.122.33', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ["3.106.122.33", "localhost", "127.0.0.1"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    "restaurant",
+    "restaurant.apps.RestaurantConfig",
     "djoser",
     "rest_framework",
     "rest_framework.authtoken",
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework_swagger",
+    "drf_yasg",
 ]
 
 
