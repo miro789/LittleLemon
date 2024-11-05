@@ -1,12 +1,14 @@
 from .models import MenuItem, Booking
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from djoser.serializers import UserSerializer as DjoserUserSerializer
 
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = "__all__"
+        ref_name = "RestaurantUserSerializer"
 
 
 class MenuSerializer(serializers.ModelSerializer):

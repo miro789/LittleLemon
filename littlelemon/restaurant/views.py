@@ -39,7 +39,7 @@ class MenuItemView(generics.ListCreateAPIView):
 
 class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
     """
-    Handles GET, PUT, and DELETE requests for a single MenuItem.
+    Handles GET, PUT, Patch and DELETE requests for a single MenuItem.
     """
 
     queryset = MenuItem.objects.all()
