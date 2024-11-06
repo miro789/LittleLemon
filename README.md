@@ -20,6 +20,7 @@ This project is designed to provide a hands-on experience in creating a Backend 
 - **Database**: MySQL
 
 - **APIs**:
+  - **API Documentations**: [API Docs](http://3.106.122.33:8888/apidocs/)
   - **Django REST Framework**:
     - Booking API: [Booking API](http://3.106.122.33:8888/api/v1/booking/tables/)
     - Menu API: [Menu API](http://3.106.122.33:8888/api/v1/menu/)
