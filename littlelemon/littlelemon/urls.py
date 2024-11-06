@@ -62,8 +62,16 @@ urlpatterns = [
     path("restaurant/", include("restaurant.urls")),  # Non-API routes
     path("api/v1/booking/", include(router.urls)),
     path("api/v1/menu/", include("restaurant.api_urls")),  # API routes
-    path("auth/", include("djoser.urls")),
-    path("auth/", include("djoser.urls.authtoken")),
+    path(
+        "auth/",
+        include(
+            [
+                path(
+                    "", include("djoser.urls")
+                ),  # Main djoser urls path('', include('djoser.urls.authtoken')), # Auth token urls ])),
+            ]
+        ),
+    ),
     path(
         "api_schema/",
         schema_view.with_ui("swagger", cache_timeout=0),
