@@ -1,24 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>API Documentation</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="//unpkg.com/swagger-ui-dist@3/swagger-ui.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Miro - API Documentation" />
+    <meta name="keywords" content="API, Swagger, Documentation, Miro" />
+    <meta name="author" content="Miro" />
+    <title>Miro - API Documentation</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//unpkg.com/swagger-ui-dist@3/swagger-ui.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f7f7f7;
+      }
+      header {
+        width: 100%;
+        padding: 20px;
+        background-color: #0a0908;
+        color: #f5ce42;
+        text-align: center;
+      }
+      #swagger-ui {
+        width: 90%;
+        max-width: 1200px;
+        margin: 20px auto;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    </style>
   </head>
   <body>
+    <header>
+      <h1>Welcome to Miro's Corner</h1>
+      <p>--- Thank you for visting ---</p>
+    </header>
     <div id="swagger-ui"></div>
     <script src="//unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
     <script>
-    const ui = SwaggerUIBundle({
-        url: "{% url schema_url %}",
+      const ui = SwaggerUIBundle({
+        url: '{% url schema_url %}',
         dom_id: '#swagger-ui',
         presets: [
           SwaggerUIBundle.presets.apis,
-          SwaggerUIBundle.SwaggerUIStandalonePreset
+          SwaggerUIBundle.SwaggerUIStandalonePreset,
         ],
-        layout: "BaseLayout"
-      })
+        layout: 'BaseLayout',
+      });
     </script>
   </body>
 </html>
