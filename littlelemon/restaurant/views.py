@@ -10,12 +10,15 @@ from .serializers import MenuSerializer, BookingSerializer, UserSerializer
 def index(request):
     return render(request, "index.html", {})
 
+
 def menu_list(request):
     # menu_items = MenuItem.objects.all()
     return render(request, "menu_list.html", {})
 
+
 def booking(request):
     return render(request, "booking.html", {})
+
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -39,7 +42,7 @@ class MenuItemView(generics.ListCreateAPIView):
 
 class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
     """
-    Handles GET, PUT, Patch and DELETE requests for a single MenuItem.
+    Handles GET, PUT, PATCH and DELETE requests for a single MenuItem.
     """
 
     queryset = MenuItem.objects.all()
