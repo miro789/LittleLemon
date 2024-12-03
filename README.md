@@ -39,7 +39,7 @@ This project is designed to provide a hands-on experience in creating a Backend 
 .
 ├── venv
 ├── manage.py
-├── myproject (project)
+├── littlelemon (project)
 │   ├── __pycache__
 │   ├── tests
 │   ├── __init__.py
