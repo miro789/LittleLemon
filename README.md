@@ -33,5 +33,43 @@ This project is designed to provide a hands-on experience in creating a Backend 
 - **AWS EC2**: For deployment, ensuring the project runs continuously 24/7.
 - **Virtual Environment**: Using `venv` to manage dependencies.
 
+### Folders
+```
+.
+.
+├── venv
+├── manage.py
+├── myproject (project)
+│   ├── __pycache__
+│   ├── tests
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+├── restaurant (app)
+│   ├── __pycache__
+│   ├── migrations
+│   ├── static
+│   │   ├── CSS
+│   │   ├── images
+│   ├── templates
+│   │   ├── base.html
+│   │   ├── header.html
+│   │   ├── footer.html
+│   │   ├── index.html
+│   │   ├── booking.html
+│   │   ├── menu_list.html
+│   │   ├── apidocs.html
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── urls.py
+│   ├── views.py
+├── README.md
+└── requirements.txt
+```
 
 
