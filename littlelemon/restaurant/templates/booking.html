@@ -41,7 +41,7 @@
             };
 
             const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-            const apiURL = isLocal ? 'http://127.0.0.1:8000/api/booking/tables/' : 'http://3.106.122.33:8888/api/booking/tables/';
+            const apiURL = isLocal ? 'http://127.0.0.1:8000/api/v1/booking/tables/' : 'http://3.106.122.33:8888/api/v1/booking/tables/';
             const token = isLocal ? '7187423fe1317a7be6337326d5efcf52ba560676' : '777e2b5fa82ee75d07f96ad8f861cfd2ec42a8a4'; // Use appropriate token
 
             fetch(apiURL, {
