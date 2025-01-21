@@ -54,7 +54,7 @@ Furthermore, comprehensive API documentation is generated using DRF-YASG (Yet An
 
 
 ### Reference Video
-[Watch the video](https://github.com/miro789/LittleLemon/blob/main/littlelemon/restaurant/static/restaurant/videos/ref.gif)
+![Watch the video](https://github.com/miro789/LittleLemon/blob/main/littlelemon/restaurant/static/restaurant/videos/ref.gif)
 
 
 ### API Document
