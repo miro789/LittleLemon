@@ -1,12 +1,24 @@
 
 # Django Backend Framework Project
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Overview](#features)
+- [Tools and Technologies](#tools-and-technologies)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+  - [Reference Video](#reference-video)
+  - [API Document](#api-document)
+- [Folder](#folders)
+
 ## Overview
 This project is designed to provide a hands-on experience in creating a Backend Framework and APIs using Django. It helps in understanding the working of the Django Framework, creating APIs, and connecting databases from backend or API to HTML.
 
 To ensure robust security, the project implements token-based authentication using Django Rest Framework (DRF) and Djoser. Users must log in to obtain a unique token, which secures access to API data, guaranteeing that only authenticated users can interact with the APIs.
 
 Furthermore, comprehensive API documentation is generated using DRF-YASG (Yet Another Swagger Generator). This tool creates detailed Swagger (OpenAPI) documentation, clearly defining API endpoints, methods, and parameters, which promotes secure and proper usage of the APIs.
+
 
 ![Project Screenshot](https://github.com/miro789/LittleLemon/blob/main/littlelemon/restaurant/static/restaurant/img/poster.png)
 
@@ -60,7 +72,7 @@ Furthermore, comprehensive API documentation is generated using DRF-YASG (Yet An
 ### API Document
 ![ApiDocs Screenshot](https://github.com/miro789/LittleLemon/blob/main/littlelemon/restaurant/static/restaurant/img/Apidocs.png)
 
-### Folders
+## Folders
 ```
 .
 .
@@ -97,7 +109,6 @@ Furthermore, comprehensive API documentation is generated using DRF-YASG (Yet An
 │   ├── urls.py
 │   ├── views.py
 └── requirements.txt
-│README.md
 
 ```
 
