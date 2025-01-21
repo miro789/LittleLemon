@@ -54,8 +54,11 @@ Furthermore, comprehensive API documentation is generated using DRF-YASG (Yet An
 
 
 ### Reference Video
-[Watch the video](https://github.com/miro789/LittleLemon/blob/main/littlelemon/restaurant/static/restaurant/video/ref.mp4)
+[Watch the video](https://github.com/miro789/LittleLemon/blob/main/littlelemon/restaurant/static/restaurant/videos/ref.gif)
 
+
+### API Document
+![ApiDocs Screenshot](https://github.com/miro789/LittleLemon/blob/main/littlelemon/restaurant/static/restaurant/img/Apidocs.png)
 
 ### Folders
 ```
@@ -77,6 +80,7 @@ Furthermore, comprehensive API documentation is generated using DRF-YASG (Yet An
 │   ├── static
 │   │   ├── CSS
 │   │   ├── images
+│   │   ├── videos
 │   ├── templates
 │   │   ├── base.html
 │   │   ├── header.html
@@ -92,8 +96,9 @@ Furthermore, comprehensive API documentation is generated using DRF-YASG (Yet An
 │   ├── serializers.py
 │   ├── urls.py
 │   ├── views.py
-├── README.md
 └── requirements.txt
+│README.md
+
 ```
 
 
