@@ -4,7 +4,7 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [Overview](#features)
+- [Features](#features)
 - [Tools and Technologies](#tools-and-technologies)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
